@@ -36,7 +36,8 @@ public class JwtController {
                     UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),
                     authenticationRequest.getPassword()));
 
-        }catch (BadCredentialsException e) {
+        }catch (Exception e) {
+            e.printStackTrace();
             System.out.println("entrou no catch!");
             e.printStackTrace();
             throw new Exception("Incorrect", e);
